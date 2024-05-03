@@ -13,3 +13,6 @@ URL= git@github.com:ybeth03/proyecto_credito_predic_talento_tech.git
 git init 
 git branch -M main
 git push -f origin main
+
+LINK DE LA BASE DE DATOS UTILIZAZDA EN ESTE CASO.
+https://www.kaggle.com/datasets/laotse/credit-risk-dataset/data
