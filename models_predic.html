@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Predicción</title>
+</head>
+<body>
+    <h1>Formulario de Predicción</h1>
+    <form action="/predict" method="post">
+
+        <label for="person_age">Edad:</label>
+        <input type="text" id="person_age" name="person_age" placeholder="Ingresa la edad (0-1)"><br><br>
+
+        <label for="person_income">Ingreso Personal:</label>
+        <input type="text" id="person_income" name="person_income" placeholder="Ingresa el ingreso personal (0-1)"><br><br>
+
+        <label for="person_emp_length">Antigüedad Laboral:</label>
+        <input type="text" id="person_emp_length" name="person_emp_length" placeholder="Ingresa la antigüedad laboral (0-1)"><br><br>
+
+        <label for="loan_amnt">Monto del Préstamo:</label>
+        <input type="text" id="loan_amnt" name="loan_amnt" placeholder="Ingresa el monto del préstamo (0-1)"><br><br>
+
+        <label for="loan_int_rate">Tasa de Interés del Préstamo:</label>
+        <input type="text" id="loan_int_rate" name="loan_int_rate" placeholder="Ingresa la tasa de interés del préstamo (0-1)"><br><br>
+
+        <label for="loan_percent_income">Porcentaje de Ingreso del Préstamo:</label>
+        <input type="text" id="loan_percent_income" name="loan_percent_income" placeholder="Ingresa el porcentaje de ingreso del préstamo (0-1)"><br><br>
+
+        <label for="cb_person_cred_hist_length">Longitud del Historial de Crédito:</label>
+        <input type="text" id="cb_person_cred_hist_length" name="cb_person_cred_hist_length" placeholder="Ingresa la longitud del historial de crédito (0-1)"><br><br>
+
+        <label for="p_h_o_trans">Propósito del Préstamo:</label>
+        <select id="p_h_o_trans" name="p_h_o_trans">
+            <option value="0">MORTGAGE</option>
+            <option value="1">OTHER</option>
+            <option value="2">OWN</option>
+            <option value="3">RENT</option>
+
+        </select><br><br>
+
+        <label for="loan_intent_trans">Tipo de Préstamo:</label>
+        <select id="loan_intent_trans" name="loan_intent_trans">
+            <option value="0">DEBTCONSOLIDATION</option>
+            <option value="1">EDUCATION</option>
+            <option value="2">HOMEIMPROVEMENT</option>
+            <option value="3">MEDICAL</option>
+            <option value="4">PERSONAL</option>
+            <option value="5">VENTURE</option>
+            <!-- Agrega más opciones según tus necesidades -->
+        </select><br><br>
+
+        <label for="loan_grade_trans">Grado del Préstamo:</label>
+        <select id="loan_grade_trans" name="loan_grade_trans">
+            <option value="0">Grado A</option>
+            <option value="1">Grado B</option>
+            <option value="2">Grado C</option>
+            <option value="3">Grado D</option>
+            <option value="4">Grado E</option>
+            <option value="5">Grado F</option>
+            <option value="6">Grado G</option>
+
+        </select><br><br>
+
+        <label for="cb_pdf_trans">Historial de Crédito:</label>
+        <select id="cb_pdf_trans" name="cb_pdf_trans">
+            <option value="0">Negative</option>
+            <option value="1">Positive</option>
+            <!-- Agrega más opciones según tus necesidades -->
+        </select><br><br>
+
+        <input type="hidden" id="model_index" name="model_index" value="0">
+
+        <input type="submit" value="Predecir Modelo 1" onclick="setModelIndex(0)">
+        <input type="submit" value="Predecir Modelo 2" onclick="setModelIndex(1)">
+        <input type="submit" value="Predecir Modelo 3" onclick="setModelIndex(2)">
+
+    </form>
+
+    <script>
+        // Función para establecer el índice del modelo antes de enviar el formulario
+        function setModelIndex(index) {
+            document.getElementById("model_index").value = index;
+        }
+    </script>
+
+</body>
+</html>
